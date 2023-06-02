@@ -1,0 +1,21 @@
+
+C# Using
+using (var streamReader = new StreamReader("c:\\file.txt"))
+{
+    Console.Write(streamReader.ReadToEnd());
+}
+C# Try-Finally Equivalent
+{
+    var streamReader = new StreamReader("c:\\file.txt");
+    try
+    {
+        Console.Write(streamReader.ReadToEnd());
+    }
+    finally
+    {
+        if (streamReader != null)
+            streamReader.Dispose();
+    }
+}
+Output
+Hello
